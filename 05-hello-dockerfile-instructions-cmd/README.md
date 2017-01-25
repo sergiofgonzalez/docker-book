@@ -28,4 +28,4 @@ $ sudo docker run -i -t sergiofgonzalez/cmd-container-img
 
 ## Related Commands and Interactions
 + `RUN` &mdash;
-+ `ENTRYPOINT` &mdash;
++ `ENTRYPOINT` &mdash; specifies the default command when the container is launched.

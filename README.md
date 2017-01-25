@@ -15,3 +15,9 @@ Illustrates how to create an image on *Ubuntu* with the *NGINX* web server insta
 
 ## 05-hello-dockerfile-instructions-cmd
 Illustrates a use-case scenario for the `CMD` instruction, which runs a command after the container has been launched.
+
+## 06-hello-dockerfile-instructions-entrypoint
+Illustrates a use-case scenario for the `ENTRYPOINT` instruction, which specifies the default command for the container (it's *entrypoint* command).
+
+## 06-hello-dockerfile-instructions-cmd-entrypoint
+Illustrates a use-case scenario mixing both the `ENTRYPOINT` and `CMD` instruction to provide a default behavior for the container.
