@@ -16,10 +16,9 @@ Hi, I am in your NGINX running inside a container
 ```
 
 **Note**
-+ The `ENTRYPOINT` instruction is supposed to be overridden by the `--entrypoint` flag in the `docker run`command, but i couldn't make it work:
++ The `ENTRYPOINT` instruction is easily overridden by the `--entrypoint` flag in the `docker run`command:
 ```bash
-$ sudo docker run -i -t sergiofgonzalez/entrypoint-container-img --entrypoint "/bin/bash"
-nginx: invalid option: "-"
+$ sudo docker run -i -t --entrypoint "/bin/bash" sergiofgonzalez/entrypoint-container-img 
 ```
 
 + You can use `ENTRYPOINT` with `CMD` to provide a default behavior for the container (see next 07-hello-dockerfile-instructions-cmd-entrypoint)

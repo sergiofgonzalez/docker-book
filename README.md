@@ -19,5 +19,15 @@ Illustrates a use-case scenario for the `CMD` instruction, which runs a command 
 ## 06-hello-dockerfile-instructions-entrypoint
 Illustrates a use-case scenario for the `ENTRYPOINT` instruction, which specifies the default command for the container (it's *entrypoint* command).
 
-## 06-hello-dockerfile-instructions-cmd-entrypoint
+## 07-hello-dockerfile-instructions-cmd-entrypoint
 Illustrates a use-case scenario mixing both the `ENTRYPOINT` and `CMD` instruction to provide a default behavior for the container.
+
+## 08-hello-dockerfile-instructions-workdir
+Illustrates the usage of `WORKDIR` to establish the working directory for the container and therefore for the `ENTRYPOINT` and `CMD` instructions.
+
+## 09-hello-dockerfile-instructions-env
+Illustrates the usage of `ENV` to define environment variables that will be available for other subsequent instructions, as well as for the processes running in the container.
+
+## 10-hello-dockerfile-instructions-user
+Illustrates the usage of `USER` to establish the user the image should be run as.
+
