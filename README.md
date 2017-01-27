@@ -31,3 +31,5 @@ Illustrates the usage of `ENV` to define environment variables that will be avai
 ## 10-hello-dockerfile-instructions-user
 Illustrates the usage of `USER` to establish the user the image should be run as.
 
+## 11-hello-dockerfile-instructions-volume
+Illustrates the usage of `USER` to establish the user the image should be run as.
