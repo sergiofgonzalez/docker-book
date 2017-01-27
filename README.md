@@ -42,3 +42,13 @@ Illustrates the usage of `ADD` instruction to copy (and uncompress) files and di
 
 ## 13-hello-dockerfile-instructions-copy
 Illustrates the usage of `COPY` instruction to copy files and directories from the build environment to the container.
+
+## 14-hello-dockerfile-instructions-label
+Illustrates the usage of `LABEL` instruction to add metadata to a container image in the form of key/value pairs.
+
+## 15-hello-dockerfile-instructions-stopsignal
+Illustrates the usage of `STOPSIGNAL` instruction to configure the system call signal that will be sent to the container when you stop it using `docker run`.
+
+## 15-hello-dockerfile-instructions-arg
+Illustrates the usage of `STOPSIGNAL` instruction to configure the system call signal that will be sent to the container when you stop it using `docker run`.
+

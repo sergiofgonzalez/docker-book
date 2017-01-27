@@ -1,0 +1,12 @@
+# Version 0.0.1
+FROM ubuntu:16.04
+MAINTAINER Sergio F. Gonzalez "sergio.f.gonzalez@gmail.com"
+ENV REFRESHED_AT 2017-01-25
+
+ARG CONFIGURABLE_ENV_VAR=default-value
+
+ENV CONTAINER_ENV_VAR=$CONFIGURABLE_ENV_VAR
+
+
+ENTRYPOINT ["/bin/sh"]
+CMD ["-c", "echo CONTAINER_ENV_VAR=$CONTAINER_ENV_VAR"]
