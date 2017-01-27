@@ -1,6 +1,9 @@
 # Docker Book
 > Examples from the book *The Docker Book, v.1.12.4* by James Turnbull (Manning, 2016)
 
+## 00-useful-docker-scripts
+Assorted collection of shell scripts to perform Docker related tasks
+
 ## 01-hello-images-with-dockerfile
 Illustrates how to create an user image that includes the *NGINX* server using a Dockerfile.
 
@@ -33,3 +36,9 @@ Illustrates the usage of `USER` to establish the user the image should be run as
 
 ## 11-hello-dockerfile-instructions-volume
 Illustrates the usage of `USER` to establish the user the image should be run as.
+
+## 12-hello-dockerfile-instructions-add
+Illustrates the usage of `ADD` instruction to copy (and uncompress) files and directories from the build environment to the container.
+
+## 13-hello-dockerfile-instructions-copy
+Illustrates the usage of `COPY` instruction to copy files and directories from the build environment to the container.

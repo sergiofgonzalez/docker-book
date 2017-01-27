@@ -27,5 +27,4 @@ Type:
 ```bash
 # This will run bash in the container and will let you interact with one of the VOLUME directories
 $ sudo docker run -i -t -v $PWD/data:/data sergiofgonzalez/volume-container-img
-nobody
 ```
