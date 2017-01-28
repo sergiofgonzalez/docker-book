@@ -49,6 +49,11 @@ Illustrates the usage of `LABEL` instruction to add metadata to a container imag
 ## 15-hello-dockerfile-instructions-stopsignal
 Illustrates the usage of `STOPSIGNAL` instruction to configure the system call signal that will be sent to the container when you stop it using `docker run`.
 
-## 15-hello-dockerfile-instructions-arg
-Illustrates the usage of `STOPSIGNAL` instruction to configure the system call signal that will be sent to the container when you stop it using `docker run`.
+## 16-hello-dockerfile-instructions-arg
+Illustrates the usage of `ARG` instruction to define a configurable variable that can be used during the build phase, and overridden while using `docker build --build-arg` command.
 
+## 17-hello-dockerfile-instructions-shell
+Illustrates the usage of `SHELL` instruction to define default shell for the subsequent instructions and the container.
+
+## 18-hello-dockerfile-instructions-healthcheck
+Illustrates the usage of `HEALTHCHECK` instruction to checking the status of the applications running in the container.

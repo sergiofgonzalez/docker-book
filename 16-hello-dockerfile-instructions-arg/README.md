@@ -34,7 +34,7 @@ To use the default value type:
 $ sudo docker build -t="sergiofgonzalez/arg-container-img" .
 ```
 
-and to override it:
+and to override the value on the building phase:
 
 ```bash
 $ sudo docker build --build-arg CONFIGURABLE_ENV_VAR=overridden-value -t="sergiofgonzalez/arg-container-img" .
