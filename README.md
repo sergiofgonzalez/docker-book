@@ -35,7 +35,7 @@ Illustrates the usage of `ENV` to define environment variables that will be avai
 Illustrates the usage of `USER` to establish the user the image should be run as.
 
 ## 11-hello-dockerfile-instructions-volume
-Illustrates the usage of `USER` to establish the user the image should be run as.
+Illustrates the usage of `VOLUME` to add a directory to a container that can be exposed outside of the container.
 
 ## 12-hello-dockerfile-instructions-add
 Illustrates the usage of `ADD` instruction to copy (and uncompress) files and directories from the build environment to the container.
@@ -57,3 +57,12 @@ Illustrates the usage of `SHELL` instruction to define default shell for the sub
 
 ## 18-hello-dockerfile-instructions-healthcheck
 Illustrates the usage of `HEALTHCHECK` instruction to checking the status of the applications running in the container.
+
+## 19-hello-dockerfile-instructions-onbuild
+Illustrates the usage of `ONBUILD` instruction to configure a trigger that is activated when an image is used as the basis for another image.
+
+## 20-hello-dockerfile-instructions-run
+Illustrates the usage of `RUN` instruction to execute a command on the image.
+
+## 21-hello-dockerfile-instructions-expose
+Illustrates the usage of `EXPOSE` instruction to tell Docker what ports the application running inside the container use.
