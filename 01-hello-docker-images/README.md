@@ -13,3 +13,5 @@ Illustrates how does Docker benefits from the build cache when building images, 
 ## 04-hello-nginx-web-server
 Illustrates how to create an image on *Ubuntu* with the *NGINX* web server installed on it and how to create containers from it.
 
+## 05-hello-docker-hub
+Illustrates how to create an image on *Ubuntu* with the *NGINX* web server installed on it and how to create containers from it.
