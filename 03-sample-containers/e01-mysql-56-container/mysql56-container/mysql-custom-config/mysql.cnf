@@ -1,0 +1,7 @@
+[mysqld]
+character_set_server=utf8
+collation_server=utf8_bin
+
+log-error=/var/lib/mysql/mysql.log
+general_log_file=/var/lib/mysql/mysql.log
+general_log=1
