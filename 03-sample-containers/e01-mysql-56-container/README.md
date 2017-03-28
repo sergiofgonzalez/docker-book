@@ -1,5 +1,5 @@
 # e01-mysql-56-container
-> definition of a mysql-56 container in which the file configuration and data is stored outside the container
+> definition of a MySQL 5.6 server container in which the configuration file and data directories are mapped to host directories
 
 ## Description
 This file contains technical details describing how the container image was built and some info about the decisions taken.
