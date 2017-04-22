@@ -5,7 +5,7 @@
 The following `run` command creats a *daemonized* Docker container from Ubuntu's latest official image:
 
 ```bash
-# create an interactive Docker container
+# create a daemonized Docker container
 $ sudo docker run --name my-ubuntu-daemonized-container -d ubuntu /bin/sh -c "while true; do echo hello world; sleep 10; done"
 ```
 

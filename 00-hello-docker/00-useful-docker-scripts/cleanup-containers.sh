@@ -7,4 +7,4 @@
 # Remove containers
 
 echo Removing containers whose status=exited
-docker rm -v $(docker ps -a -q -f status=exited)
+docker rm $(docker ps -a -q -f status=exited)

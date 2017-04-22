@@ -13,3 +13,5 @@ Creates a daemonized Docker container from the latest Ubuntu image
 ## [03 &mdash; Running Processes in a Running Container](./03-running-processes-in-already-running-container/)
 Running new processes into already running containers
 
+## [04 &mdash; Basic Docker Commands](./04-basic-docker-commands/)
+Running new processes into already running containers
