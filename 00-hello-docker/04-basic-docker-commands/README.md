@@ -11,8 +11,8 @@
 + `docker exec` &mdash; runs a process inside an already running container (see [03 &mdash; Running Processes in a Running Container](../03-running-processes-in-already-running-containers/))
 + `docker run` &mdash; sends commands to the *Docker engine* in order to start a container from an image
 + `docker stop [container]` &mdash; stops a running container
-+ `docker logs [container]` &mdash; fetches the logs of a container (see [Seeing What's Happening Inside Our Container Using `docker logs`](#seeing-whats-happening-inside-our-container-using-docker-logs"))
-+ `docker inspect [container]` &mdash; retrieves all the information of a container (see [Finding Out All Information of a Container using `docker inspect`](#finding-out-all-information-of-a-container-using-docker-inspect")
++ `docker logs [container]` &mdash; fetches the logs of a container (see [Seeing What's Happening Inside Our Container Using `docker logs`](#seeing-whats-happening-inside-our-container-using-docker-logs))
++ `docker inspect [container]` &mdash; retrieves all the information of a container (see [Finding Out All Information of a Container using `docker inspect`](#finding-out-all-information-of-a-container-using-docker-inspect))
 + `docker rm [container]` &mdash; deletes a container (use `-f` to delete a running container)
 
 
