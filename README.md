@@ -5,3 +5,4 @@ The examples have been classified into sections:
 + **00-hello-docker** &mdash; Shell scripts and Docker commands not requiring a building environment or custom images
 + **01-hello-docker-images** &mdash; Basic examples on building images and exploring basic Dockerfile concepts
 + **02-dockerfile-instructions** &mdash; Examples on Dockerfile instructions
++ **03-sample-containers** &mdash; Sample containers for assorted use-cases
