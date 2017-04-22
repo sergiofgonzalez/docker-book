@@ -1,4 +1,4 @@
-# 01-hello-daemonized-docker-container
+# 03 &mdash; Running Processes in a Running Container
 > running processes in already running containers
 
 ## Description
@@ -15,7 +15,7 @@ In this running container, we can use the `docker exec` command to run processes
 $ sudo docker exec my-ubuntu-daemonized-container touch /etc/some_new_config_file
 ```
 
-or even, create an interactive shell session in the container:
+This approach can also be used to create an interactive shell session in a daemonized container:
 ```bash
 $ sudo docker exec my-ubuntu-daemonized-container -it /bin/bash
 ```

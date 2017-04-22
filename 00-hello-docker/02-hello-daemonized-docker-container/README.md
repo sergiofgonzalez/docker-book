@@ -1,5 +1,5 @@
-# 02-hello-daemonized-docker-container
-> your first daemonized Docker container
+# 02 &mdash; Hello Daemonized Docker Container
+> your first daemonized Docker container explained in detail
 
 ## Description
 The following `run` command creats a *daemonized* Docker container from Ubuntu's latest official image:

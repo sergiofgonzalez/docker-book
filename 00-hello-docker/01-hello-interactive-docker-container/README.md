@@ -1,5 +1,5 @@
-# 01-hello-interactive-docker-container
-> your first interactive Docker container
+# 01 &mdash; Hello Interactive Docker Container
+> your first interactive Docker container explained in detail
 
 ## Description
 The following `run` command creats a Docker container from Ubuntu's latest official image:
