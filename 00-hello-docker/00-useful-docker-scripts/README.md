@@ -1,4 +1,4 @@
-# 00 &mdash Some Useful Docker Scripts
+# 00 &mdash; Some Useful Docker Scripts
 > a collection of Docker scripts for house-keeping tasks
 
 ## Description
