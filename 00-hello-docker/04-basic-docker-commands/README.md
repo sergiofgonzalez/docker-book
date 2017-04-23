@@ -77,6 +77,7 @@ The format can be used with multiple containers and contain several entries in t
 $ sudo docker inspect --format="{{ .Name }} {{ .State.Running }}" my-ubuntu-daemonized-container my-ubuntu-interactive-container
 ```
 
+Below is JSON document returned by a `docker inspect` command:
 ```json
 [
     {
