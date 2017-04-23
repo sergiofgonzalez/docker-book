@@ -3,17 +3,20 @@
 
 ## Description
 
-+ `docker info` &mdash; displays general information about the Docker installation and runtime
-+ `docker ps` &mdash; lists currently running Docker containers
-+ `docker ps -a` &mdash; lists all Docker containers independently of their state
-+ `docker top [container]` &mdash; inspects the processes running in a daemonized container
-+ `docker stats [container1] [container2]` &mdash; displays general statistics (CPU/MEM/NET...) for a list of containers
-+ `docker exec` &mdash; runs a process inside an already running container (see [03 &mdash; Running Processes in a Running Container](../03-running-processes-in-already-running-containers/))
-+ `docker run` &mdash; sends commands to the *Docker engine* in order to start a container from an image
-+ `docker stop [container]` &mdash; stops a running container
-+ `docker logs [container]` &mdash; fetches the logs of a container (see [Seeing What's Happening Inside Our Container Using `docker logs`](#seeing-whats-happening-inside-our-container-using-docker-logs))
-+ `docker inspect [container]` &mdash; retrieves all the information of a container (see [Finding Out All Information of a Container using `docker inspect`](#finding-out-all-information-of-a-container-using-docker-inspect))
-+ `docker rm [container]` &mdash; deletes a container (use `-f` to delete a running container)
+| Command                                  | Description                                                            |
+|------------------------------------------|------------------------------------------------------------------------|
+| `docker info`                            | displays general information about the Docker installation and runtime |
+| `docker ps`                              | lists currently running Docker containers                              |
+| `docker ps -a`                           | lists all Docker containers independently of their state               |
+| `docker top [container]`                 | inspects the processes running in a daemonized container               |
+| `docker stats [container1] [container2]` | displays general statistics (CPU/MEM/NET...) for a list of containers  |
+| `docker exec`                            | runs a process inside an already running container (see [03 &mdash; Running Processes in a Running Container](../03-running-processes-in-already-running-containers/)) |
+| `docker run`                             | sends commands to the *Docker engine* in order to start a container from an image |
+| `docker stop [container]`                | stops a running container |
+| `docker logs [container]`                | fetches the logs of a container (see [Seeing What's Happening Inside Our Container Using `docker logs`](#seeing-whats-happening-inside-our-container-using-docker-logs)) |
+| `docker inspect [container]`             | etrieves all the information of a container (see [Finding Out All Information of a Container using `docker inspect`](#finding-out-all-information-of-a-container-using-docker-inspect)) |
+| `docker rm [container]`                  | deletes a container (use `-f` to delete a running container) |
+| `docker images`                          | lists available images on the local file system |
 
 
 ### Seeing What's Happening Inside Our Container Using `docker logs`

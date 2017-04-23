@@ -1,4 +1,4 @@
-# 02-debugging-image-creation
+# 02 &mdash; Tips on Debugging the Image Creation Process
 > debugging the image creation process
 
 ## Description

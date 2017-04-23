@@ -1,4 +1,4 @@
-# 05-hello-docker-hub
+# 05 &mdash; Hello Docker Hub
 > pushing user images to the Docker Hub
 
 ## Description

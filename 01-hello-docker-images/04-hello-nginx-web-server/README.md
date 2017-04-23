@@ -1,5 +1,5 @@
-# 04-exploring-docker-build-cache
-> building a Docker image on Ubuntu with NGINX web server and spinning containers
+# 04 &mdash; Launching an NGINX web server from an image
+> building a Docker image on Ubuntu with NGINX web server and spinning containers from it
 
 ## Description
 Based on the previous examples, we build an user image from `ubuntu:16.04` and install `nginx` web server on top.

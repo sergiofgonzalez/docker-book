@@ -1,4 +1,4 @@
-# 01-hello-images-with-dockerfile
+# 01 &mdash; Hello Docker Images based on Dockerfiles
 > creating Docker images with a Dockerfile
 
 ## Description

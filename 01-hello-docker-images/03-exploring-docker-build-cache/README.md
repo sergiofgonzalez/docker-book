@@ -1,8 +1,8 @@
-# 03-exploring-docker-build-cache
+# 03 &mdash; Grokking the Docker Build Cache
 > exploring build cache functionality in Docker
 
 ## Description
-Illustrates how to force the running new statements when required.
+Illustrates how to force re-running new statements when required, skipping the build cache.
 
 As Docker automatically uses images from its build cache when building new images, you may end up with a `Dockerfile` that includes the command `apt-get update` but that it is not actually contacting the repos to fetch the latests versions, but instead using a cached image that included older versions.
 
