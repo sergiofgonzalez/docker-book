@@ -1,4 +1,4 @@
-# 10-hello-dockerfile-instructions-user
+# `USER` instruction
 > specifying the user that the image should be run as
 
 ## Description
@@ -24,8 +24,3 @@ Type:
 $ sudo docker run -i -t sergiofgonzalez/sergiofgonzalez/user-container-img
 nobody
 ```
-
-## Related Commands and Interactions
-+ `CMD` &mdash; specifies a command to run when the container is launched.
-+ `ENTRYPOINT` &mdash; specifies the default command when the container is launched.
-

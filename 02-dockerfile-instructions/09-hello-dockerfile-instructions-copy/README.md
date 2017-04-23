@@ -1,4 +1,4 @@
-# 13-hello-dockerfile-instructions-copy
+# `COPY` instruction
 > copying files and directories from the build directory into the image
 
 ## Description

@@ -1,4 +1,4 @@
-# 09-hello-dockerfile-instructions-env
+# `ENV` instruction
 > setting environment variables in your container
 
 ## Description
@@ -23,8 +23,3 @@ Type:
 $ sudo docker run -i -t sergiofgonzalez/sergiofgonzalez/env-container-img
 someValue mysql 3306
 ```
-
-## Related Commands and Interactions
-+ `CMD` &mdash; specifies a command to run when the container is launched.
-+ `ENTRYPOINT` &mdash; specifies the default command when the container is launched.
-

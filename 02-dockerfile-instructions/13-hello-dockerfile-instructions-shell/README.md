@@ -1,4 +1,4 @@
-# 17-hello-dockerfile-instructions-shell
+# `SHELL` instruction
 > set the default shell for the subsequent Dockerfile instruction and the container
 
 ## Description

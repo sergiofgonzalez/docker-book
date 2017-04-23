@@ -1,4 +1,4 @@
-# 08-hello-dockerfile-instructions-workdir
+# `WORKDIR` instruction
 > establishing the working directory for a container and `ENTRYPOINT` and `CMD` instructions
 
 ## Description

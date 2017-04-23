@@ -1,4 +1,4 @@
-# 07-hello-dockerfile-instructions-cmd-entrypoint
+# Using `ENTRYPOINT` and `CMD` together
 > using `CMD` and `ENTRYPOINT` to provide a default behavior for the entrypoint of a container.
 
 ## Description
@@ -25,7 +25,7 @@ $ sudo docker run -i -t sergiofgonzalez/default-cmd-container-img
 ```
 
 ## Related Commands and Interactions
-+ `RUN` &mdash;
++ `RUN` &mdash; executes a command on the current image
 + `CMD` &mdash; specifies a command to run when the container is launched.
 + `ENTRYPOINT` &mdash; specifies the default command when the container is launched.
 

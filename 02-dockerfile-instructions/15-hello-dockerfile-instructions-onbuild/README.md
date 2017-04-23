@@ -1,4 +1,4 @@
-# 19-hello-dockerfile-instructions-onbuild
+# `ONBUILD` instruction
 > add triggers to images that will be run when the image is used as the basis for another image
 
 ## Description

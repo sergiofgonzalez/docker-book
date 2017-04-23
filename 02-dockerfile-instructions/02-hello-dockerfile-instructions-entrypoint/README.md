@@ -1,4 +1,4 @@
-# 06-hello-dockerfile-instructions-entrypoint
+# The `ENTRYPOINT` instruction
 > the `ENTRYPOINT` instruction specifies the default command to run when starting the container
 
 ## Description
@@ -35,5 +35,5 @@ $ sudo docker run -d -p 8080:80 sergiofgonzalez/entrypoint-container-img -g "dae
 ```
 
 ## Related Commands and Interactions
-+ `RUN` &mdash; specifies a command to run when the container is launched. Can be used with `ENTRYPOINT` to provide a default behavior.
-+ `CMD` &mdash;
++ `RUN` &mdash; executes a command on the current image
++ `CMD` &mdash; specifies a command to run when the container is launched. Can be used with `ENTRYPOINT` to provide a default behavior.

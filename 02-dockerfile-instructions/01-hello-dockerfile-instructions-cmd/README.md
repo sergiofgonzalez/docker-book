@@ -1,8 +1,8 @@
-# 05-hello-dockerfile-instructions-cmd
-> the `CMD` instruction to run a command when the container has launched
+# The `CMD` instruction
+> the `CMD` instruction runs a command inside the container, when the container has launched
 
 ## Description
-The `CMD` instruction is used to run a command when the container has launched, pretty much in the same way you'd use the `docker run` command.
+The `CMD` instruction is used to run a command inside the container, when the container has launched, pretty much in the same way that the `docker run` command does.
 
 In the example, a container is created with a `CMD` instruction that tells the container to run the *bash* shell once it is launched. As a result, you won't have to include that command when running the container.
 
@@ -27,5 +27,5 @@ $ sudo docker run -i -t sergiofgonzalez/cmd-container-img
 ```
 
 ## Related Commands and Interactions
-+ `RUN` &mdash;
-+ `ENTRYPOINT` &mdash; specifies the default command when the container is launched.
++ `RUN` &mdash; executes a command on the current image
++ `ENTRYPOINT` &mdash; specifies the default command to run when starting the container

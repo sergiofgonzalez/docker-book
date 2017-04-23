@@ -1,4 +1,4 @@
-# 16-hello-dockerfile-instructions-arg
+# `ARG` instruction
 > define variables that can be passed at build time to the image building process
 
 ## Description

@@ -1,12 +1,10 @@
-# 21-hello-dockerfile-instructions-expose
+# `EXPOSE` instruction
 > announce the port that an application will use in the container
 
 ## Description
 Use the `EXPOSE` instruction to tell Docker that the application runnin in this container will use this specific port on the container. The port will not be opened automatically, so typically, the `EXPOSE` instruction should be paired with `-p` flag of the `docker run` command.
 
 You can also expose ports at run time using the `--expose` option.
-
-
 
 
 ### Build Instructions

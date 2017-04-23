@@ -1,4 +1,4 @@
-# 18-hello-dockerfile-instructions-healthcheck
+# `HEALTHCHECK` instruction
 > configure a healthcheck command to verify that a container is working correctly
 
 ## Description

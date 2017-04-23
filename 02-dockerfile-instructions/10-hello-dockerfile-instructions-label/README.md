@@ -1,4 +1,4 @@
-# 14-hello-dockerfile-instructions-label
+# `LABEL` instruction
 > adding key/value metadata to a Docker image
 
 ## Description

@@ -1,4 +1,4 @@
-# Docker Book &mdas; Hello, Docker Images!
+# Docker Book &mdash; Hello, Docker Images!
 > Basic examples on building images and exploring Dockerfile concepts
 
 ## [01 &mdash; Hello Docker Images based on Dockerfiles](./01-hello-images-with-dockerfile/)

@@ -1,4 +1,4 @@
-# 11-hello-dockerfile-instructions-volume
+# `VOLUME` instruction
 > adding directories that bypasses the Union File System to a container
 
 ## Description

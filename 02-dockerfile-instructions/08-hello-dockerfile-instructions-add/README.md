@@ -1,4 +1,4 @@
-# 12-hello-dockerfile-instructions-add
+# `ADD` instruction
 > adding files and directories from the build directory into the image
 
 ## Description

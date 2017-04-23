@@ -1,4 +1,4 @@
-# 15-hello-dockerfile-instructions-stopsignal
+# `STOPSIGNAL` instruction
 > set the system call signal that will be sent when the container is stopped
 
 ## Description
