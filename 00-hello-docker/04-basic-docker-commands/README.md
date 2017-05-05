@@ -17,6 +17,7 @@
 | `docker inspect [container]`             | etrieves all the information of a container (see [Finding Out All Information of a Container using `docker inspect`](#finding-out-all-information-of-a-container-using-docker-inspect)) |
 | `docker rm [container]`                  | deletes a container (use `-f` to delete a running container) |
 | `docker images`                          | lists available images on the local file system |
+| `docker history [image]`                 | lists the steps and layers that make up the given image |
 
 
 ### Seeing What's Happening Inside Our Container Using `docker logs`

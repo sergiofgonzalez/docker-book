@@ -5,7 +5,7 @@
 Use `ENV` to set environment variables in your container during the image build process. The variables defined will available for subsequent Dockerfile instructions, as well as for the processes running within the container.
 
 
-You can also define environment variables with the `-e` flaf of the `docker run` command:
+You can also define environment variables with the `-e` flag of the `docker run` command:
 ```bash
 $ sudo docker run -i -t -e "PROGRAM_VERSION=0.0.1" --entrypoint env /usr sergiofgonzalez/env-container-img
 /usr
