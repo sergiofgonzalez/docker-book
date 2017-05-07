@@ -12,8 +12,8 @@ server:
 app:
   entriesPerPage: 3
 
-db:
-  host: redis-db
-  port: 6379
-
 ERROR_ROUTE: true
+
+db:
+  host: localhost
+  port: 6379

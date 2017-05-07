@@ -8,7 +8,7 @@ module.exports = (cb, entriesPerPage) => {
   }
   entriesPerPage = entriesPerPage || 10;
   return (req, res, next) => {
-    const page = Math.max(parseInt(req.params.page || "1", 10), 1) - 1;
+    const page = Math.max(Number.parseInt(req.params.page || "0"), 0);
     cb((err, total) => {
       if (err) {
         return next(err);

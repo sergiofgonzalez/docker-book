@@ -2,10 +2,12 @@
 
 const redis = require("redis");
 const bcrypt = require("bcrypt");
-const debug = require("debug")("user:server");
 const config = require("../lib/config");
+const debug = require("debug")("user:server");
+
 
 const db = redis.createClient({ host: config("db:host"), port: config("db:port") });
+
 
 db.on("error", err => {
   debug(`Error connecting to the REDIS database: ${ err }`);
@@ -22,6 +24,7 @@ class User {
   toJSON() {
     return {
       id: this.id,
+      // @ts-ignore
       name: this.name
     };
   }

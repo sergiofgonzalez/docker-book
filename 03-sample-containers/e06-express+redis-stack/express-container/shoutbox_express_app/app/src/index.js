@@ -79,7 +79,7 @@ app.set("entriesPerPage", config("app:entriesPerPage"));
 
 // RESTful API
 app.get("/api/user/:id", api.user);
-app.post("/api/entry", entries.submit);
+app.post("/api/entry", api.validateUserCredentials, entries.submit);
 app.get("/api/entries/:page?", page(Entry.count), api.entries); // we use the default value for paging programmatically
 
 // Interactive Requests

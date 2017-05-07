@@ -17,8 +17,7 @@ exports.submit = (req, res, next) => {
       res.redirect("/");
     } else {
       res.error("Sorry! Invalid credentials");
-      res.render("login", { title: "Login" });
-      // res.redirect("back");
+      res.redirect("back");
     }
   });
 };

@@ -1,10 +1,12 @@
 "use strict";
 
 const redis = require("redis");
-const debug = require("debug")("entry:server");
 const config = require("../lib/config");
+const debug = require("debug")("entry:server");
+
 
 const db = redis.createClient({ host: config("db:host"), port: config("db:port") });
+
 
 db.on("error", err => {
   debug(`Error connecting to the REDIS database: ${ err }`);

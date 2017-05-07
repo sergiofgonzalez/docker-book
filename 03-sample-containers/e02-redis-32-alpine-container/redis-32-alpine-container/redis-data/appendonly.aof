@@ -151,3 +151,22 @@ $7
 entries
 $109
 {"username":"sergio","title":"Time to go running","body":"It's time to get the things and burn those carbs!"}
+*2
+$6
+SELECT
+$1
+0
+*3
+$5
+lpush
+$7
+entries
+$97
+{"username":"sergio","title":"Post from API","body":"This post has been registered from the API"}
+*3
+$5
+lpush
+$7
+entries
+$150
+{"username":"sergio","title":"The last post i will ever do","body":"This is the last post i will ever include, i am frankly quite tired of this shit"}
