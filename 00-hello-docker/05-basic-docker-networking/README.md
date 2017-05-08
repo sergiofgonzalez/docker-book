@@ -1,5 +1,5 @@
 # 05 &mdash; Basic Docker Network
-> running processes in already running containers
+> introducing the Docker network concepts
 
 ## Description
 

@@ -22,3 +22,6 @@ An example using Docker networking that features an *Express* based web applicat
 
 ## [07 &mdash; Jenkins+Docker Server](./e07-jenkins+docker-server/)
 An example that spins a Docker container with Jenkins that uses containers for running the jobs.
+
+## [08 &mdash; Jekyll+Apache Stack](./e07-jekyll+apache-stack/)
+An example that uses a stack with two containers: one that compiles a site using *Jekyll* and dies, and another one that uses a volume from the former and exposes the compiled website using Apache HTTP server. It also illustrated how to make a backup of a volume defined in another container.

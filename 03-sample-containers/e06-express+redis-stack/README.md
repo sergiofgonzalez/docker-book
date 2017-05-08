@@ -2,7 +2,7 @@
 > Setting up an application based on Express and Redis on top of Docker Networking
 
 ## Description
-This file contains technical details describing how the applications was set up.
+This file contains technical details describing how the applications were set up.
 
 For details about how to build the container images and run the containers from it, please refer to the containers' README.md files.
 
