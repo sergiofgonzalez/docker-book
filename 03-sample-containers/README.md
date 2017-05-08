@@ -19,3 +19,6 @@ A Redis container custom built on top of the Ubuntu image.
 
 ## [06 &mdash; Express+Redis Stack](./e06-express+redis-stack/)
 An example using Docker networking that features an *Express* based web application and the *Redis* key-value store.
+
+## [07 &mdash; Jenkins+Docker Server](./e07-jenkins+docker-server/)
+An example that spins a Docker container with Jenkins that uses containers for running the jobs.

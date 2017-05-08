@@ -19,7 +19,7 @@ Then, check that the `app` network is available by using `docket network inspect
 $ sudo docker run -d --network=app --name redis-db sergiofgonzalez/redis-ubuntu
 ```
 **NOTE**
-+ See that we're not using `-p` to expose the port, as we will be using it inside the `app` network.
++ See that it's not necessary to use `-p` to expose the port, as we will be using it inside the `app` network.
 
 After successfully running the container you should be able to check that `app` lists `redis-db` as a container.
 

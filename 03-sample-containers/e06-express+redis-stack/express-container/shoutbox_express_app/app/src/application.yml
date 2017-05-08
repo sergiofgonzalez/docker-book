@@ -15,5 +15,5 @@ app:
 ERROR_ROUTE: true
 
 db:
-  host: localhost
+  host: redis-db
   port: 6379
