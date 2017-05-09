@@ -18,6 +18,7 @@
 | `docker rm [container]`                  | deletes a container (use `-f` to delete a running container) |
 | `docker images`                          | lists available images on the local file system |
 | `docker history [image]`                 | lists the steps and layers that make up the given image |
+| `docker kill -s [signal] [container]`    | sends the given signal (e.g. HUP) to the container |
 
 
 ### Seeing What's Happening Inside Our Container Using `docker logs`
