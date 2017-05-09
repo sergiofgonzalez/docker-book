@@ -13,7 +13,7 @@ $ sudo docker build -t="sergiofgonzalez/redis-ubuntu" .
 
 ## Run Instructions
 First, make sure that you're on the container working dir (that is, you should be in the same directory where the `Dockerfile` is defined). Otherwise, you will need to adapt the paths of the mapped volumes.
-Then, check that the `app` network is available by using `docket network inspect app`.
+Then, check that the `app` network is available by using `docker network inspect app`.
 
 ```bash
 $ sudo docker run -d --network=app --name redis-db sergiofgonzalez/redis-ubuntu

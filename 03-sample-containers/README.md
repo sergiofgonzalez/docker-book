@@ -23,5 +23,11 @@ An example using Docker networking that features an *Express* based web applicat
 ## [07 &mdash; Jenkins+Docker Server](./e07-jenkins+docker-server/)
 An example that spins a Docker container with Jenkins that uses containers for running the jobs.
 
-## [08 &mdash; Jekyll+Apache Stack](./e07-jekyll+apache-stack/)
+## [08 &mdash; Jekyll+Apache Stack](./e08-jekyll+apache-stack/)
 An example that uses a stack with two containers: one that compiles a site using *Jekyll* and dies, and another one that uses a volume from the former and exposes the compiled website using Apache HTTP server. It also illustrated how to make a backup of a volume defined in another container.
+
+## [09 &mdash; Tomcat WAR deployment example](./e09-tomcat-war/)
+Illustrates how to deploy a WAR fetched from a URL into a Tomcat 7 container built on top of Ubuntu official image.
+
+## [10 &mdash; Node+Redis multicontainer example](./e10-node-redis-multicontainer/)
+A multicontainer example involving a Redis cluster with one primary node and two replicas, a Express based Node.js application and a Logstash node that collects the logs from both Redis primary and Express application. Illustrates concepts such as Docker Networking, volumes and using one-off containers to read information from volumes or other containers.
