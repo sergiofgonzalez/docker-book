@@ -1,0 +1,16 @@
+# Docker Compose Service specfication 
+version: "3"
+
+services:
+  # Web Service
+  web:
+    image: sergiofgonzalez/flask
+    command: python app.py
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./python-flask-container/sample_flask_app:/composeapp
+
+  # Redis backend
+  redis:
+    image: redis

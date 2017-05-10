@@ -8,7 +8,7 @@ For details about how to build the container images and run the containers from 
 
 In a nutshell, we have:
 + A Node.js container to serve the Express application, linked to
-+ A Redis primary container to hold and cluster application state, liked to
++ A Redis primary container to hold and cluster application state, linked to
 + Two Redis replica containers to cluster our state
 + A container featuring Logstash to capture our application logs
 
