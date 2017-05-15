@@ -9,6 +9,8 @@ We'll run distributed Consul inside Docker containers. We're then going to regis
 + Build three hosts running Docker and then run Consul on each (this illustrates how resiliency and failover works with Consul).
 + Build services that we'll register with Consul and then query that data from another service
 
+However, right now only the standalone, one-node Consule is available.
+
 
 ### Running a Consul cluster in Docker
 **in-progress**
