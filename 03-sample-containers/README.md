@@ -31,3 +31,9 @@ Illustrates how to deploy a WAR fetched from a URL into a Tomcat 7 container bui
 
 ## [10 &mdash; Node+Redis multicontainer example](./e10-node-redis-multicontainer/)
 A multicontainer example involving a Redis cluster with one primary node and two replicas, a Express based Node.js application and a Logstash node that collects the logs from both Redis primary and Express application. Illustrates concepts such as Docker Networking, volumes and using one-off containers to read information from volumes or other containers.
+
+## [11 &mdash; Postgres 9.6 container](./e11-postgres96-container/)
+A containerized Postgres 9.6 with a volume mapped for the data and configuration.
+
+## [12 &mdash; MongoDB 3.4 container](./e12-mongodb34-container/)
+A containerized MongoDB 3.4 with a volume mapped for the data directory.
