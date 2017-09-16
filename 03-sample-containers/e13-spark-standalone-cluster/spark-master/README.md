@@ -1,7 +1,7 @@
 # Docker Container for Spark Master Node
 > Specification for the Master node in an Apache Spark standalone cluster
 
-This is the working directory for a container playing the role of the *Master* in an Apache standalone cluster.
+This is the working directory for a container playing the role of the *Master* in an Apache Spark Standalone Cluster.
 
 The cluster is started in *daemon* mode using the official `start-master.sh` script that comes bundled with the Spark distribution, and the logs are redirected to *stdout* so that they become available using the `docker logs` command.
 
@@ -48,9 +48,9 @@ As stated before, the container has been designed to be run as a service within 
 $ sudo docker exec spark-master /bin/bash -c "./bin/spark-submit --master local[*] --class <main-class-for-spark-app> /media/shared-spark/<jar-name-for-spark-app> <additional-args>"
 ```
 
-assuming that you have previously copied the *jar* in the host shared volume found in `../shared/volume`.
+assuming that you have previously copied the *jar* in the host shared volume found in `../shared-volume`.
 
-Note that if you submit the job to the cluster (using `--master spark://0.0.0.0:7077` instead of using `--master local[*]`) it will eventually stop waiting for worker nodes to become available.
+Note that if you submit the job to the cluster (using `--master spark://0.0.0.0:7077` instead of using `--master local[*]`) it will eventually stop, waiting for worker nodes to become available to process the tasks.
 
 You can follow the information in the section [Manually Connecting the Worker with a Running Master](../spark-worker/README.md#manually-connecting-the-worker-with-a-running-master) in the Spark worker documentation to link the *Master* with a *Worker* without using *Docker Compose* or *Docker Swarm*.
 

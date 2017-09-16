@@ -27,7 +27,7 @@ You can check whether everything went well by typing:
 $ sudo docker-compose logs
 ```
 
-or alternatively, you can also use the `docker compose up` which starts the stack in the foreground showing the logs of the different services.
+or alternatively, you can use the `docker compose up` which starts the stack in the foreground showing the logs of the different services.
 
 ### Executing a Spark Application in the Cluster
 There are several alternative ways to execute an application in the cluster:
@@ -48,6 +48,8 @@ If you used `docker-compose up -d` you will be able to bring down the cluster by
 ```bash
 $ sudo docker-compose down
 ```
+
+Otherwise, simply typing *CTRL+C* will bring the cluster down.
 
 ### Using Docker Swarm to Bootstrap the Cluster
 *Docker Swarm* allows you to bootstrap the *Spark Cluster* featuring a *Master* and one or several *Workers* across multiple hosts, which allows for better performance and reliability.

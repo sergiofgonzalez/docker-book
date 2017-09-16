@@ -1,7 +1,7 @@
 # Docker Container for Spark Worker Node
 > Specification for the Worker node in an Apache Spark standalone cluster
 
-This is the working directory for a container playing the role of the *Worker* node in an Apache standalone cluster.
+This is the working directory for a container playing the role of the *Worker* node in an Apache Spark Standalone Cluster.
 
 The worker tries to register itself with the master using the environment variable `SPARK_MASTER_CONTAINER_IP_PORT` (long name to prevent clashes with variables used by Spark), which should point to an already started *Spark Master*. 
 
@@ -75,7 +75,7 @@ $ sudo docker logs spark-master
 17/09/16 19:11:00 INFO Master: Registering worker 172.17.0.3:32932 with 4 cores, 2.9 GB RAM
 ```
 
-Once the connection is established, you will have a simples *Spark Standalone Cluster* with a master and a single worker node, and you will be able to submit applications to execution using:
+Once the connection is established, you will have a simplest *Spark Standalone Cluster* with a master and a single worker node, and you will be able to submit applications to execution using:
 ```bash
 $ sudo docker exec spark-master /bin/bash -c "./bin/spark-submit --master spark://w.x.y.z:7077 --class <main-class-for-spark-app> /media/shared-spark/<jar-name-for-spark-app> <additional-args>"
 ```

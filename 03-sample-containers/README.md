@@ -39,3 +39,4 @@ A containerized Postgres 9.6 with a volume mapped for the data and configuration
 A containerized MongoDB 3.4 with a volume mapped for the data directory.
 
 ## [13 &mdash; Apache Spark 2.2.0 standalone cluster](./e13-spark-standalone-cluster/)
+A containerized stack for a Spark standalone cluster including a *Spark Master* and one or several *Spark Workers*. The stack is ready to be deployed to *Docker Compose* or *Docker Swarm*.
