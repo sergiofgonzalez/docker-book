@@ -1,0 +1,32 @@
+# Docker Compose Service Identification
+version: "3.3"
+
+services:
+
+  spark-master:
+    container_name: spark-master-container
+    image: sergiofgonzalez/spark-master:2.2.0
+    ports:
+      - "7077:7077"
+    volumes:
+      - type: volume
+        source: ./shared-volume
+        target: /media/shared-spark
+    deploy:
+      mode: replicated
+      replicas: 1
+
+  spark-worker:
+    container_name: spark-worker-container
+    image: sergiofgonzalez/spark-worker:2.2.0
+    environment:
+      - SPARK_MASTER_CONTAINER_IP_PORT=spark://spark-master:7077
+    volumes:
+      - type: volume
+        source: ./shared-volume
+        target: /media/shared-spark
+    deploy:
+      mode: replicated
+      replicas: 2
+    depends_on:
+      - spark-master 

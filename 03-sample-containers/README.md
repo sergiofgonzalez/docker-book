@@ -37,3 +37,5 @@ A containerized Postgres 9.6 with a volume mapped for the data and configuration
 
 ## [12 &mdash; MongoDB 3.4 container](./e12-mongodb34-container/)
 A containerized MongoDB 3.4 with a volume mapped for the data directory.
+
+## [13 &mdash; Apache Spark 2.2.0 standalone cluster](./e13-spark-standalone-cluster/)

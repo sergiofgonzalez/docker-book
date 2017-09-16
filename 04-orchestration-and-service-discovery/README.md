@@ -6,7 +6,7 @@
 Python Flash web application using a Redis backend whose orchestration is managed using *Docker compose*.
 
 ## [02 &mdash; Consul](./02-consul/)
-**wip**
+An example using *Consul* &mdash; the service discovery tool.
 
 ## [03 &mdash; Swarm](./03-swarm/)
-**wip**
+A detailed example on how to setup a *Swarm* cluster to distribute load across several machines.
