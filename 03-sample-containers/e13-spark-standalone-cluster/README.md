@@ -30,7 +30,7 @@ $ sudo docker-compose logs
 or alternatively, you can use the `docker compose up` which starts the stack in the foreground showing the logs of the different services.
 
 ### Executing a Spark Application in the Cluster
-There are several alternative ways to execute an application in the cluster:
+There are several alternative ways to execute an application in the cluster. Both cases require you to know the private IP address of the Spark Master (`w.x.y.z`), as described on the section [Manually Connecting the Worker with a Running Master](./spark-worker/README.md#manually-connecting-the-worker-with-a-running-master) in the Spark worker documentation.
 
 1. Using `docker-compose exec`:
 ```bash
