@@ -1,4 +1,4 @@
-# 04 &mdash; Exoress web app
+# 04 &mdash; Express web app
 > Serving a dynamic application using Node.js Express framework
 
 ## Description
