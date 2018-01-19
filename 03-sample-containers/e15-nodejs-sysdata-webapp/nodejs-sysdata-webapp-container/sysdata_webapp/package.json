@@ -1,0 +1,36 @@
+{
+  "name": "sysdata_webapp",
+  "version": "0.0.1",
+  "description": "A simple HTTP server that responds with a JSON containing some system data",
+  "main": "index.js",
+  "engines": {
+    "node": "8.9.4",
+    "npm": "5.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sergiofgonzalez/grokking-kubernetes.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Sergio F. Gonzalez",
+    "email": "sergio.f.gonzalez@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "4.15.0"
+  },
+  "config": {},
+  "dependencies": {
+    "js-yaml": "3.10.0",
+    "nconf": "0.10.0"
+  },
+  "scripts": {
+    "setup": "rm -rf node_modules && npm install",
+    "prestart": "npm run lint",
+    "start": "node ./app/src/index.js",
+    "lint": "./node_modules/.bin/eslint app/src/",
+    "predebug": "npm run lint",
+    "debug": "node --inspect-brk=${npm_config_debugHost:-127.0.0.1} ./app/src/index.js"
+  }
+}

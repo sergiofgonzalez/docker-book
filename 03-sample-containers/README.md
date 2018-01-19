@@ -43,3 +43,6 @@ A containerized stack for a Spark standalone cluster including a *Spark Master* 
 
 ## [14 &mdash; Node.js application container](./e14-nodejs-app/)
 A container for running Node.js applications using the official Node.js image.
+
+## [15 &mdash; Node.js system data webapp container](./e15-nodejs-sysdata-webapp/)
+A container running a Node.js based web application that reports a JSON document with some system data of the machine on which it is running in.
