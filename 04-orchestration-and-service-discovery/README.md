@@ -10,3 +10,6 @@ An example using *Consul* &mdash; the service discovery tool.
 
 ## [03 &mdash; Swarm](./03-swarm/)
 A detailed example on how to setup a *Swarm* cluster to distribute load across several machines.
+
+## [04 &mdash; Hello Minikube on Linux host](./04-hello-minikube-linux/)
+A detailed example that covers how to install, setup, deploy a simple application and validate *Minikube* &mdash; a tool that simplifies the execution of Kubernetes locally, on a single-node Kubernetes cluster for development purposes.
