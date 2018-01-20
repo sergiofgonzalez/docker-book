@@ -367,6 +367,13 @@ $ sudo rm /usr/local/bin/kubectl /usr/local/bin/minikube
 
 # Clean the cached resources
 $ sudo rm -rf ~/.kube/ ~/.minikube/
+
+# Stop and Disable the localkube service
+$ sudo systemctl stop localkube.service
+$ systemctl disable localkube.service
+
+# Remove the service from the system
+sudo rm /etc/systemd/system/localkube.service
 ```
 
 You might also want to uninstall VirtualBox.
