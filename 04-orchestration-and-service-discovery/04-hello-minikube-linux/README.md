@@ -370,7 +370,7 @@ $ sudo rm -rf ~/.kube/ ~/.minikube/
 
 # Stop and Disable the localkube service
 $ sudo systemctl stop localkube.service
-$ systemctl disable localkube.service
+$ sudo systemctl disable localkube.service
 
 # Remove the service from the system
 sudo rm /etc/systemd/system/localkube.service
