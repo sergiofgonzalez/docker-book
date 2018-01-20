@@ -1,8 +1,8 @@
-# 04 &mdash; Setting up Minikube on Linux host
-> how-to setup *minikube* on a Linux machine (native, non-virtualized Linux)
+# 04 &mdash; Setting up *Minikube* on Linux host
+> how-to setup *Minikube* on a Linux machine (native, non-virtualized Linux)
 
 ## Description
-This document describes the steps to install and validate *Minikube* &mdash; a tool that sets up a single-node cluster for testing and developing Kubernetes applications &mdash; on a **non-virtualized Linux machine**. 
+This document describes the steps to install and validate *Minikube* &mdash; a tool that sets up a single-node cluster for testing and developing *Kubernetes* applications &mdash; on a **non-virtualized Linux machine**. 
 
 For more detailed information on *Minikube* please see the [official](https://kubernetes.io/docs/getting-started-guides/minikube/) documentation.
 
@@ -13,7 +13,7 @@ the installation steps will be different if you want to install *Minikube* on a 
 *Minikube* requires installing a *hypervisor* in your machine. The example assumes you install [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
 
 ### Step 1: Installing *Minikube*
-The installation command for installing *Minikube* on Linux can be found in the [minikube](https://github.com/kubernetes/minikube/releases) web page.
+The installation command for installing *Minikube* on Linux can be found on the [Minikube](https://github.com/kubernetes/minikube/releases) web page.
 
 At the time of testing, the latest available version was 0.24.1:
 ```bash
@@ -44,7 +44,7 @@ Loading cached images from config file.
 Note that `sudo` is not needed to run `minikube` commands.
 
 ### Step 3: Installing the Kubernetes command-line tool (`kubectl`)
-The *Kubernetes command line tool* is used to deploy and manage applications on Kubernetes. The following command can be used to download and install the latest stable version:
+The *Kubernetes command line tool* is used to deploy and manage applications on *Kubernetes*. The following command can be used to download and install the latest stable version:
 ```bash
 $ curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin
 ```
@@ -76,7 +76,7 @@ Kubernetes master is running at https://192.168.99.100:8443
 To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 ```
 
-### Step 5: Listing Kubernetes Nodes and their details
+### Step 5: Listing *Minikube* Nodes and their details
 *Minikube* is a single-node cluster, so the `kubectl get nodes` should return a single node:
 ```bash
 $ kubectl get nodes
@@ -101,7 +101,7 @@ CreationTimestamp:  Fri, 19 Jan 2018 21:55:06 +0100
 ```
 
 ### Step 6: Configuring auto-completion for `kubectl`
-All the interaction with Kubernetes happens through the `kubectl` command. Therefore, it is recommended to enable *bash auto-completion* by running:
+All the interaction with *Minikube* happens through the `kubectl` command. Therefore, it is recommended to enable *bash auto-completion* by running:
 ```bash
 $ kubectl completion bash >> ~/.bashrc
 ```
@@ -120,7 +120,7 @@ The command above will run the image given by the `--image` parameter, creating 
 For reviewing the concepts, please see the section [below](##concepts).
 
 ### Step 8: Obtaining information about the deployed application
-Kubernetes does not deal with individual containers, but instead defines a new concept *pod* that is a group of multiple co-located containers, that will always run together on the same worker node and the same Linux namespace.
+*Minikube* does not deal with individual containers, but instead defines a new concept *pod* that is a group of multiple co-located containers, that will always run together on the same worker node and the same Linux namespace.
 
 Another way to rationalize a pod is as a group of one or more tightly related containers that appear to be running on the same logical machine. Containers running on different pods will appear to be running on different machines, even when are running on the same node.
 
@@ -173,7 +173,7 @@ Note that `EXTERNAL-IP` is still in `<pending>` status. This is because *Minikub
 $ minikube service nodejs-sysdata-webapp-http
 ```
 
-This will open a browser window pointing at http://192.168.99.100:32570, which is the Kubernetes master IP address and the port listed by the `kubetctl get services` command.
+This will open a browser window pointing at http://192.168.99.100:32570, which is the *Minikube* master IP address and the port listed by the `kubetctl get services` command.
 
 Note that even if you do:
 ```bash
@@ -194,7 +194,7 @@ External Traffic Policy:  Cluster
 Events:                   <none>
 ```
 
-you will never be able to see the IP address that you have to interact with the service. In *Minikube*, you need to use the Kubernetes master IP address to do that:
+you will never be able to see the IP address that you have to interact with the service. In *Minikube*, you need to use the *Minikube* master IP address to do that:
 ```bash
 $ curl 192.168.99.100:32570
 {"hostname":"nodejs-sysdata-webapp-jqsng","architecture":{"arch":"x64","platform":"linux","release":"4.9.13","type":"Linux"},"resources":{"cpus":[{"model":"Intel(R) Core(TM) i5-3427U CPU @ 1.80GHz","speed":2294,"times":{"user":1015600,"nice":5600,"sys":660500,"idle":15358400,"irq":0}},{"model":"Intel(R) Core(TM) i5-3427U CPU @ 1.80GHz","speed":2294,"times":{"user":718400,"nice":7800,"sys":436700,"idle":15704900,"irq":0}}],"totalmem":2097229824,"freemem":713629696}}
@@ -262,7 +262,7 @@ nodejs-sysdata-webapp-tr8vr   1/1       Running   0          15m       172.17.0.
 As *Minikube* is a single-node cluster, the three pods are hosted on the same node.
 
 ### Step 12: Obtaining a graphical view of the system with the dashboard
-When using *minikube* the Kubernetes dashboard is not immediately available, as you can see when using the command:
+When using *Minikube* the *Kubernetes* dashboard is not immediately available, as you can see when using the command:
 ```bash
 $ kubectl cluster-info
 Kubernetes master is running at https://192.168.99.100:8443
@@ -321,7 +321,7 @@ nodejs-sysdata-webapp-jqsng   1/1       Running   1          10h
 ```
 
 #### Removing the application
-To remvoe the deployed application, you will have to delete the associated Kubernetes components (pods, replication controllers, services)
+To remove the deployed application, you will have to delete the associated *Kubernetes* components (pods, replication controllers, services)
 
 ```bash
 # Delete the service
@@ -375,16 +375,16 @@ You might also want to uninstall VirtualBox.
 
 ### Kubernetes
 A production-grade open source platform that orchestrates the placement and execution of application containers within and across computer clusters.
-For more information on the basics of Kubernetes, please visit https://kubernetes.io/docs/tutorials/kubernetes-basics/.
+For more information on the basics of *Kubernetes*, please visit https://kubernetes.io/docs/tutorials/kubernetes-basics/.
 
 ### Minikube
-A tool that makes it easy to run Kubernetes locally. *Minikube* runs a single-node Kubernetes clsuter inside a VM on your laptop for users looking to try out Kubernetes or develop with it day-to-day.
+A tool that makes it easy to run *Kubernetes* locally. *Minikube* runs a single-node *Kubernetes* clsuter inside a VM on your laptop for users looking to try out *Kubernetes* or develop with it day-to-day.
 For more information on *Minikube*, please visit (https://kubernetes.io/docs/getting-started-guides/minikube/).
 
 ### Pods
-Kubernetes does not deal with individual containers, but instead defines a new concept *pod* that is a group of multiple co-located containers, that will always run together on the same worker node and the same Linux namespace.
+*Kubernetes* does not deal with individual containers, but instead defines a new concept *pod* that is a group of multiple co-located containers, that will always run together on the same worker node and the same Linux namespace.
 
-A pod is the basic building block in Kubernetes. A pod can contain one or more containers that are closely related, and each one will have its own unique private IP address and hostname.
+A pod is the basic building block in *Kubernetes*. A pod can contain one or more containers that are closely related, and each one will have its own unique private IP address and hostname.
 
 It is important to note that *pods* are considered ephemeral &mdash; they can be moved from node to node, they might stop because of infrastructure issues or application failures, etc.
 
