@@ -122,7 +122,7 @@ Once the descriptor has been defined, you can spin up a new pod from it typing:
 ```bash
 $ kubectl create -f nodejs-sysdata-webapp.yml
 pod "nodejs-sysdata-webapp-yml" created
-sergio@demogorgon:~/Development/git-repos/misc-projects/docker-book/04-orchestration-and-service-discovery/05-kubernetes-pods$kubectl get pods
+$ kubectl get pods
 NAME                          READY     STATUS    RESTARTS   AGE
 nodejs-sysdata-webapp-pcqc2   1/1       Running   0          24m
 nodejs-sysdata-webapp-yml     1/1       Running   0          1s
