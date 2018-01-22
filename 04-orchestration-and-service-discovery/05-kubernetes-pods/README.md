@@ -209,3 +209,33 @@ To modify an existing label of a pod you have to use the `--overwrite` flag:
 $ kubectl label pod nodejs-sysdata-webapp-yml env=development --overwrite
 pod "nodejs-sysdata-webapp-yml" labeled
 ```
+
+Obviously, things start getting interesting when you can use them as filters to act on resources. For example, to list all the pods labeled with `creation_method=manual` you'd do:
+```bash
+$ kubectl get pods -l creation_method=manual
+```
+
+The following command lists the pods for which `env` label is defined:
+```bash
+$ kubectl get pods -l env
+```
+
+The following command lists the pods for which `env` label is not defined:
+```bash
+$ kubectl get pods -l '!env'
+```
+
+The following command lists the pods whose `creation_method` is not `manual`:
+```bash
+$ kubectl get pods -l 'creation_method!=manual'
+```
+
+The following command lists the pods whose `env` label is either `production` or `development`:
+```bash
+$ kubectl get pods -l 'env in (production,development)'
+```
+
+And the following command lists the pods whose `env` label is neither `production` nor `development`:
+```bash
+$ kubectl get pods -l 'env notin (production,development)'
+```
