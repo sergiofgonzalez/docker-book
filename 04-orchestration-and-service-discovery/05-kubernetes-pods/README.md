@@ -165,7 +165,7 @@ In Kubernetes, a label is an arbitrary key-value pair you attach to a Kubernetes
 A resource can have more than one label, as long as the keys of those labels are unique within that resource.
 
 The label is typically included in the YML descriptor:
-```bash
+```yml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -239,3 +239,64 @@ And the following command lists the pods whose `env` label is neither `productio
 ```bash
 $ kubectl get pods -l 'env notin (production,development)'
 ```
+
+And you can also use several conditions in the label selector:
+```bash
+$ kubectl get pods -l env=development,creation_method=manual
+```
+
+### Constraining pod scheduling
+When your infrastructure isn't homogenous (i.e. you might have some of your machines with GPU) you might want to say specifically where a pod should be scheduled.
+Specifically identifying the node on which a pod should be deployed would debunk the purpose of *Kubernetes*, but you might want to tell *Kubernetes* to use a node with some characteristics. This can be done with label selectors (i.e. labels).
+
+The following command adds a label to a node:
+```bash
+$ kubectl label nodel minikube gpu=true
+node "minikube" labeled
+```
+
+Then, when specifying the *resource descriptor* for a pod you can do:
+```yml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nodejs-sysdata-webapp-yml
+  labels:
+    creation_method: manual
+    env: prod
+spec:
+  nodeSelector:
+    gpu: "true"
+  containers:
+    - image: sergiofgonzalez/nodejs-sysdata-webapp:v1
+      name: nodejs-sysdata-webapp
+      ports:
+        - containerPort: 8080
+          protocol: TCP
+```
+and it will force the scheduling of the pod only to nodes containing the label `gpu=true`
+
+### Annotating Pods
+Annotations are like labels, but there's no functionality built into annotations to perform filters and selections &mdash; they are purely informational.
+
+```bash
+$ kubectl annotate pod nodejs-sysdata-webapp-yml \
+com.github.sergiofgonzalez/description="Testing annotations"
+```
+
+You can review annotations using `kubectl describe`:
+```bash
+$ kubectl describe pod nodejs-sysdata-webapp-yml
+Name:         nodejs-sysdata-webapp-yml
+Namespace:    default
+Node:         minikube/192.168.99.100
+Start Time:   Sun, 21 Jan 2018 15:36:48 +0100
+Labels:       creation_method=manual
+              env=development
+Annotations:  com.github.sergiofgonzalez/description=Testing annotations
+Status:       Running
+IP:           172.17.0.3
+...
+```
+
+and also `kubectl get pod`.
