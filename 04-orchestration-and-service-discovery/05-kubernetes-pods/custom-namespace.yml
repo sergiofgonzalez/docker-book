@@ -1,0 +1,6 @@
+# YAML for a namespace definition
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: custom-namespace

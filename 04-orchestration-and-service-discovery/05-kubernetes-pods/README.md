@@ -300,3 +300,133 @@ IP:           172.17.0.3
 ```
 
 and also `kubectl get pod`.
+
+Obviously, annotations can also be added at creation time.
+
+### Namespace
+*Namespaces* lets you group objects into separate, non-overlapping groups.
+Use cases:
+  + split complex systems into smaller groups
+  + multi-tenancy
+  + environments (dev, qa, production...) in a single cluster
+  + assign separate set of resources to different groups of users, so that each group manage their own distinct set of resources, without needing to take care (of even be aware) of other pods running in the system. This can also be used for authorization purposes.
+
+
+
+**NOTE**
+Kubernetes *namespaces* are not *Linux namespaces*.
+
+To obtain the namespaces of a cluster type:
+```bash
+$ kubectl get namespaces
+NAME          STATUS    AGE
+default       Active    20m
+kube-public   Active    20m
+kube-system   Active    20m
+```
+
+*Kubectl* assumes the `default` namespace when you don't specify a namespace.
+
+To list the pods in a non-default namespace use:
+```bash
+$ kubectl get pods --namespace=kube-system
+NAME                                    READY     STATUS    RESTARTS   AGE
+kube-addon-manager-minikube             1/1       Running   0          24m
+kube-dns-54cccfbdf8-ntzg2               3/3       Running   0          24m
+kubernetes-dashboard-77d8b98585-s62xm   1/1       Running   0          24m
+storage-provisioner                     1/1       Running   0          24m
+```
+
+This simple yaml can be used to create a namespace:
+```yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+
+  name: custom-namespace
+```
+
+Alternatively, you can do:
+```bash
+$ kubectl create namespace custom-namespace
+```
+
+To create a resource in a specific namespace you can either add the `namespace` key in the resource descriptor
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nodejs-sysdata-webapp-yml-ns
+  namespace: custom-namespace
+  labels:
+...
+```
+or run the `create` command with the --namespace option:
+```bash
+$ kubectl create -f nodejs-sysdata-webapp.yml --namespace custom-namespace
+pod "nodejs-sysdata-webapp-yml-labels" created
+```
+
+#### Changing the current namespace in *kubectl*
+To avoid having to type `--namespace custom-namespace` you have to change the *current context's namespace* using `kubectl`:
+
+```bash
+$ kubectl config set-context $(kubectl config current-context) --namespace custom-namespace
+Context "minikube" modified.
+```
+
+You can revert back to the default using:
+```bash
+$ kubectl config set-context $(kubectl config current-context) --namespace default
+Context "minikube" modified.
+```
+
+#### Caveats
+
++ Not all resources are namespace aware &mdash; for example, *nodes* cannot be defined in namespaces.
++ Namespace don't provide any kind of isolation between resources &mdash; a pod in a given namespace can interact with a pod in a completely different namespace of the cluster. However, you can lay out a networking solution on top of Kubernetes to provide network isolation per namespace.
+
+### Stopping and Removing Pods
+To delete a pod by name type:
+```bash
+$ kubectl delete pod nodejs-sysdata-webapp-mcvvb
+pod "nodejs-sysdata-webapp-mcvvb" deleted
+```
+
+You can delete several pods with a single command:
+```bash
+$ kubectl delete pod nodejs-sysdata-webapp-mcvvb nodejs-sysdata-webapp-yml nodejs-sysdata-webapp-yml-labels-annotations
+pod "nodejs-sysdata-webapp-mcvvb" deleted
+pod "nodejs-sysdata-webapp-yml" deleted
+```
+
+You can delete pods using label selectors:
+```bash
+kubectl delete pods -l creation_method=manual
+```
+
+You can delete pods by deleted the whole namespace:
+```bash
+$ kubectl delete namespace custom-namespace
+namespace "custom-namespace" deleted
+```
+
+You can delete all the pods in the current namespace using:
+```bash
+$ kubectl delete pods --all
+```
+
+You can delete the *replication controller*, *pods* and *services* with the following command:
+```bash
+$ kubectl delete all --all
+pod "nodejs-sysdata-webapp-nvhzx" deleted
+replicationcontroller "nodejs-sysdata-webapp" deleted
+service "kubernetes" deleted
+```
+
+Note that the previous command also deletes the *kubernetes service*, but it should be automatically recreated:
+```bash
+$ kubectl get service
+NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   3m
+```

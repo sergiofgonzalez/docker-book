@@ -368,15 +368,35 @@ $ sudo rm /usr/local/bin/kubectl /usr/local/bin/minikube
 # Clean the cached resources
 $ sudo rm -rf ~/.kube/ ~/.minikube/
 
-# Stop and Disable the localkube service
+# Maybe: Stop and Disable the localkube service
 $ sudo systemctl stop localkube.service
 $ sudo systemctl disable localkube.service
 
-# Remove the service from the system
+# Maybe: Remove the service from the system
 sudo rm /etc/systemd/system/localkube.service
 ```
 
 You might also want to uninstall VirtualBox.
+
+#### Updating *Minikube* to a newer version
+When a new version of *Minikube* becomes available you receive a message such as:
+
+```bash
+$ minikube start
+There is a newer version of minikube available (v0.25.0).  Download it here:
+https://github.com/kubernetes/minikube/releases/tag/v0.25.0
+
+To disable this notification, run the following:
+minikube config set WantUpdateNotification false
+...
+```
+
+In order to update it, you should stop *Minikube* access the updated webpage and run the update command, which for v0.25.0 is:
+```bash
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.25.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+```
+
+If afer restarting the *Minikube* it fails, you will be forced to reinstall by following the steps from [Uninstalling Minikube](##uninstalling-minikube). It might even fail after this (facepalm).
 
 ## Concepts
 
