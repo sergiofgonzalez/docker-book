@@ -1,7 +1,7 @@
 {
-  "name": "sysdata_webapp",
+  "name": "unhealthy_sysdata_webapp",
   "version": "0.0.1",
-  "description": "A simple HTTP server that responds with a JSON containing some system data",
+  "description": "A simple HTTP server that responds with a 500 every 5th request to simulate an error",
   "main": "index.js",
   "engines": {
     "node": "8.9.4",

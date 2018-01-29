@@ -1,0 +1,15 @@
+# Resource descriptor for a pod that supports a liveness HTTP probe
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: unhealthy-webapp
+spec:
+  containers:
+    - image: sergiofgonzalez/nodejs-unhealthy-webapp
+      name: nodejs-unhealthy-webapp
+      livenessProbe:
+        httpGet:
+          path: /
+          port: 8080
+        initialDelaySeconds: 15

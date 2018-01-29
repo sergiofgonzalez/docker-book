@@ -1,0 +1,2 @@
+# Include newline separated list of exclusion patterns
+node_modules

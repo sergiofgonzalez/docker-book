@@ -1,4 +1,4 @@
-# 05 &mdash; Concepts on Kubernetes Pods
+# 02 &mdash; Concepts on Kubernetes Pods
 > additional concepts on Kubernetes pods
 
 ## Description

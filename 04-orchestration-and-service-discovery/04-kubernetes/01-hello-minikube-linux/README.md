@@ -1,4 +1,4 @@
-# 04 &mdash; Setting up *Minikube* on Linux host
+# 01 &mdash; Setting up *Minikube* on Linux host
 > how-to setup *Minikube* on a Linux machine (native, non-virtualized Linux)
 
 ## Description
