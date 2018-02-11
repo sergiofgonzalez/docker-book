@@ -4,12 +4,17 @@
 ## Concepts
 
 ### Index
++ [Daemon Sets](,/#daemon-sets)
 + [Kubernetes](./#kubernetes)
 + [Minikube](./#minikube)
 + [Namespaces](./#namespaces)
 + [Pods](./#pods)
 + [Replication Controllers](./#replication-controllers)
++ [Replica Sets](./#replica-sets)
 + [Services](./services)
+
+### Daemon Sets
+A type of *ReplicaSet* used to run exactly one pod instance on each and every node of the cluster matching the given expression. It is typically used to run applications such as resource monitors, log collectors, etc.
 
 
 ### Kubernetes
@@ -37,7 +42,12 @@ Containers running on different pods will appear to be running on different mach
 
 
 ### Replication Controllers
-The component in charge of ensuring that there's always running the specified number of instances of a pod. If a pod fails for any reason, the Replication Controller would create a new one to replace the missing one.
+A Kubernetes resource in charge of ensuring that there's always running the specified number of instances of a pod. If a pod fails for any reason, the *Replication Controller* would create a new one to replace the missing one.
+
+A *Replication Controller* makes sure that an exact number of pods always matches its label selector. If it doesn't, the *Replication Controller* takes the appropriate action to reconcile the actual with the desired number. As a consequence, it can not only spin up new pods, but it only can delete excess pods.
+
+### Replication Sets
+A new generation of *replication controller* that allows for more expressive pod selectors. Plays the same role as a *ReplicationController*, but supports an advanced syntax for matching the pods it manages (through `matchExpressions`).
 
 ### Services
 Services represent a static location for a group of one or more pods that all provide the same service.

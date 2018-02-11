@@ -1,0 +1,24 @@
+# Resource descriptor for a replica set in charge of managing
+# nodejs-sysdata-webapp pods
+
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: ssd-monitor
+
+spec:
+  selector:
+    matchLabels:
+      - app: ssd-monitor
+  
+  template:
+    metadata:
+      labels:
+        app: ssd-monitor
+    spec:
+      nodeSelector:
+        disk: ssd    # pod will only be deployed when the node features disk=ssd
+
+    containers:
+      - name: nodejs-sysdata-webapp
+        image: sergiofgonzalez/ssd-monitor  # just an example, image does not exist

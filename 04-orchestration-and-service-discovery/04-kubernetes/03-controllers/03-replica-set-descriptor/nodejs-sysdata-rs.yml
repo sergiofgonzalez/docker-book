@@ -1,0 +1,22 @@
+# Resource descriptor for a replica set in charge of managing
+# nodejs-sysdata-webapp pods
+
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nodejs-sysdata-webapp-rs
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nodejs-sysdata-webapp
+  
+  template:
+    metadata:
+      labels:
+        app: nodejs-sysdata-webapp
+    spec:
+      containers:
+      - name: nodejs-sysdata-webapp
+        image: sergiofgonzalez/nodejs-sysdata-webapp:v1
