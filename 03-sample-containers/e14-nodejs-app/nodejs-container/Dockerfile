@@ -13,4 +13,4 @@ WORKDIR $APP_DIR
 ADD nodejs_app $APP_DIR
 
 # Default command for the container: run `npm start` (NOTE: it assumes all deps are already there)
-CMD npm start
+CMD npm install && npm start

@@ -1,8 +1,12 @@
-# e02-random-file-generator
-> creating files with some random contents using Node.js file bulk API
+# e14-nodejs-batch-app
+> a very simple, one-off, batch application built on Node.js
 
 ## Description
-A very simple application that generates some files with different number of records, format and sizes using an async approach but the file bulk API, which requires the file to be materialized prior to being written, which might be challenging for really large files.
+A very simple application that prints a message in a console every second, for 15 seconds and then ends. The application is used as as an example for a *Job Resource* in Kubernetes.
 
-**NOTE**
-For a tool the generates the same types of files, by using Node's file streams API instead of files see [e02-random-file-generator](../../chapter15-streams/e02-streaming-random-file-generator/).
+To build the image for the Kubernetes example type:
+
+```bash
+$ sudo docker build -t="sergiofgonzalez/nodejs-batch-app" .
+```
+

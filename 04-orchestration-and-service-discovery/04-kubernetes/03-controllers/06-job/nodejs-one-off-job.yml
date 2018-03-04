@@ -1,0 +1,17 @@
+# Resource descriptor for a Job definition
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: nodejs-batch-app
+
+spec:
+  template:
+    metadata:
+      labels:
+        app: nodejs-batch-job
+    spec:
+      restartPolicy: OnFailure      
+      containers:
+      - name: nodejs-batch-job
+        image: sergiofgonzalez/nodejs-batch-app

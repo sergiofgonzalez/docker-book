@@ -5,11 +5,11 @@
 This document collects some concepts on Kubernetes replication and other controllers.
 
 ### Liveness Probes
-A liveness probe is a mechanism that Kubernetes use to check if a container is still alive. The followin options are available:
+A liveness probe is a mechanism that Kubernetes use to check if a container is still alive. The following options are available:
 
-+ HTTP GET probe &mdash; an HTTP request sent to the container's IP  on the configured address/port/path. If the probe responds with an HTTP error code or doesn't respond the container will be restarted.
-+ A TCP Socket probe &mdash; a TCP connection to the specified port of the container. If the connection cannot be established successfully the container will be restarted.
-+ An Exec probe &mdash; executes an arbitrary command inside the container and checks the command's exit status code. Any non-zero return code will trigger a container restart.
++ **HTTP GET** probe &mdash; an HTTP request sent to the container's IP  on the configured address/port/path. If the probe responds with an HTTP error code or doesn't respond the container will be restarted.
++ A **TCP Socket** probe &mdash; a TCP connection to the specified port of the container. If the connection cannot be established successfully the container will be restarted.
++ An **Exec** probe &mdash; executes an arbitrary command inside the container and checks the command's exit status code. Any non-zero return code will trigger a container restart.
 
 #### HTTP Liveness Probe
 The example in [01-liveness-probe-descriptor](./liveness-probe-descriptor/unhealthy-webapp-http-probe.yml) demonstrates how to include an HTTP liveness probe:
@@ -112,9 +112,9 @@ Exit code 137 means that the process was terminated by a 128+9 (SIGKILL) while e
 A *Replication Controller* makes sure that an exact number of pods always matches its label selector. If it doesn't, the *Replication Controller* takes the appropriate action to reconcile the *actual* with the *desired number*. As a consequence, it can not only spin up new pods, but it also can delete excess pods.
 
 The specification of a *Replication Controller* requires:
-+ a *label selector* &mdash; determines what pods are in the *Replication Controller's scope*
-+ a *replica count* &mdash; identifying the desired number of pods that should be running.
-+ a *pod template* &mdash; the pod resource description
++ a **label selector** &mdash; determines what pods are in the *Replication Controller's scope*
++ a **replica count** &mdash; identifying the desired number of pods that should be running.
++ a **pod template** &mdash; the pod resource description
 
 A *Replication Controller* specification can be changed at any time, but only changes on the *replication count* have an effect on existing pods. If the *label selector* or *pod template* is changed, it just changes the existing *scope* of the *Replication Controller* leaving the previous pods managed by the *Replication Controller* unchanged.
 
@@ -284,14 +284,14 @@ And you can create the *replica set* from it using `kubectl create -f` command.
 Note that:
 + This time, the `apiVersion` key specifies both an API group (apps) and a version (v1). This is common on the newly created resource types.
 
-You can query the *replica set status using*:
+You can query the *replica set* status using:
 ```bash
 $ kubectl get replicasets
 NAME                       DESIRED   CURRENT   READY     AGE
 nodejs-sysdata-webapp-rs   3         3         3         6h
 ```
 
-or obtain detailed info about a particular replicaset doing:
+or obtain detailed info about a particular *replica set* doing:
 ```bash
 $ kubectl describe replicaset nodejs-sysdata-webapp-rs
 Name:         nodejs-sysdata-webapp-rs
@@ -339,10 +339,10 @@ For example, you can use the following syntax:
 ```
 
 There are four valid operators:
-+ *In* &mdash; label's value must match one of the specified values
-+ *NotIn* &mdash; label's value must not match any of the specified values
-+ *Exists* &mdash; pod must include a label with the specified key (value is not important). You shouldn't specify the `values` field when using this option.
-+ *DoesNotExist* &mdash; pod must not include a label with the specified key. You shouldn't specify the `values` field when using this option.
++ **In** &mdash; label's value must match one of the specified values
++ **NotIn** &mdash; label's value must not match any of the specified values
++ **Exists** &mdash; pod must include a label with the specified key (value is not important). You shouldn't specify the `values` field when using this option.
++ **DoesNotExist** &mdash; pod must not include a label with the specified key. You shouldn't specify the `values` field when using this option.
 
 And you can specify multiple expressions and even use both `matchLabels` and `matchExpressions`. All the given conditions must evaluate to true for the *ReplicaSet* to match a pod.
 
@@ -390,3 +390,38 @@ You can obtain information about a daemon set using `kubectl get daemonsets` and
 
 ### Job Resource
 
+A *Job Resource* lets you define a task that will terminate once it completes its work. In the event of a node failure, the pods managed by a Job will be rescheduled to other nodes. In the event of a failure of the process itself (i.e. when the process returns an exit code), the Job can be configured to either restart the container or not by configuring the `restarPolicy` attribute of the *YAML* definition:
+
+```yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: nodejs-batch-app
+
+spec:
+  template:
+    metadata:
+      labels:
+        app: nodejs-batch-job
+    spec:
+      restartPolicy: OnFailure      
+      containers:
+      - name: nodejs-batch-job
+        image: sergiofgonzalez/nodejs-batch-app
+```
+
+You can use the following command to check the status of the job while running:
+
+```bash
+$ kubectl get jobs
+NAME               DESIRED   SUCCESSFUL   AGE
+nodejs-batch-app   1         0            4m
+```
+
+And the job will show up in `kubectl get pods` output while the process is running, but once completed, you will have to use:
+
+```bash
+$ kubectl get pods --show-all
+NAME                     READY     STATUS      RESTARTS   AGE
+nodejs-batch-app-wzhg4   0/1       Completed   0          12m
+```
