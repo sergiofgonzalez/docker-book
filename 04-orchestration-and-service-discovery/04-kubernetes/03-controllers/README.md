@@ -425,3 +425,119 @@ $ kubectl get pods --show-all
 NAME                     READY     STATUS      RESTARTS   AGE
 nodejs-batch-app-wzhg4   0/1       Completed   0          12m
 ```
+
+*Job*s can be configured to create more than one pod instance and run them in parallel or sequentially.
+
+Using `completions` you can specify how many jobs will run sequentially:
+
+```yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: multicompletion-nodejs-batch-app
+
+spec:
+  completions: 5
+  template:
+    metadata:
+      labels:
+        app: multicompletion-nodejs-batch-app
+    spec:
+      restartPolicy: OnFailure      
+      containers:
+      - name: nodejs-batch-job
+        image: sergiofgonzalez/nodejs-batch-app
+```
+
+Kubernetes will create a different pod for each execution.
+
+You can use `parallelism` to run jobs in parallel. In the following example, there will be 5 executions in total, with two of them running in parallel.
+
+```yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: parallelism-nodejs-batch-app
+
+spec:
+  completions: 5
+  parallelism: 2
+  template:
+    metadata:
+      labels:
+        app: parallelism-nodejs-batch-app
+    spec:
+      restartPolicy: OnFailure      
+      containers:
+      - name: nodejs-batch-job
+        image: sergiofgonzalez/nodejs-batch-app
+```
+
+You can also change a Job's *parallelism* property while the job is in execution typing:
+
+```bash
+kubectl scale job parallism-nodejs-batch-app --replicas 3
+```
+
+A job can also be configured with a timeout value, so that if the job runs longer than that the system tries to terminate it and marks it as failed. Also, you can use the property `backoffLimit` to configure how many times the job should be restarted (default is 6):
+
+```yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: nodejs-batch-app-with-deadline
+
+spec:
+  activeDeadlineSeconds: 10
+  backoffLimit: 3
+  template:
+    metadata:
+      labels:
+        app: nodejs-batch-app-with-deadline
+    spec:
+      restartPolicy: OnFailure      
+      containers:
+      - name: nodejs-batch-job
+        image: sergiofgonzalez/nodejs-batch-app
+```
+
+### CronJob Resource
+
+A *CronJob* resource is used to schedule the execution of a job at the time configured by a *cron expression*.
+
+For example, to run a job every hour at 0, 15, 30 and 45 you would do:
+
+```yaml
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: nodejs-batch-app-every-15-mins
+
+spec:
+  schedule: "0,15,30,45 * * * *"
+  startingDeadlineSeconds: 15
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: nodejs-batch-app-every-15-mins
+        spec:
+          restartPolicy: OnFailure      
+          containers:
+          - name: nodejs-batch-job
+            image: sergiofgonzalez/nodejs-batch-app
+```
+
+You can also use the `startingDeadlineSeconds` to instruct Kubernetes to start the job no londer than the given number of seconds:
+
+#### A Crash Course of Cron Expressions
+
+A cron expression is a sequence of 5 fields, that is read from left to right with the following values:
++ Minute
++ Hour
++ Day of month
++ Month
++ Day of week
+
+For the values you can use specify values as in `"0,15,30,45"` meaning that the job will execute in the minute *0, 15, 30 and 45*, `"*"` means every, so `"0 * * * *"` means every hour, of every day at minute 0.

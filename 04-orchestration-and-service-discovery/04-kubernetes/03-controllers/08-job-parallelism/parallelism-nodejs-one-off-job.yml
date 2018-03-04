@@ -1,0 +1,20 @@
+# Resource descriptor for a Job definition
+# using completions to specify how many times i want the job to run 
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: parallelism-nodejs-batch-app
+
+spec:
+  completions: 5
+  parallelism: 2
+  template:
+    metadata:
+      labels:
+        app: parallelism-nodejs-batch-app
+    spec:
+      restartPolicy: OnFailure      
+      containers:
+      - name: nodejs-batch-job
+        image: sergiofgonzalez/nodejs-batch-app

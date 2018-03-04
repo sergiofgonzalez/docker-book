@@ -1,0 +1,21 @@
+# Resource descriptor for a Job definition
+
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: nodejs-batch-app-every-15-mins
+
+spec:
+  schedule: "0,15,30,45 * * * *"
+  startingDeadlineSeconds: 30
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: nodejs-batch-app-every-15-mins
+        spec:
+          restartPolicy: OnFailure      
+          containers:
+          - name: nodejs-batch-job
+            image: sergiofgonzalez/nodejs-batch-app
