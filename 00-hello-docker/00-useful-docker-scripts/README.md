@@ -12,4 +12,5 @@ The directory contains the following scripts:
 In the latests versions of Docker, the following interesting commands have also been enabled:
 + `docker system df` &mdash; display all the storage taken by Docker images and containers
 + `docker system prune` &mdash; purges all storage that is not currently used by Docker
++ `docker volume prune` &mdash; purges all volume storage related data that is not currently used by Docker
 

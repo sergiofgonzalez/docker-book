@@ -19,7 +19,9 @@
 | `docker images`                          | lists available images on the local file system |
 | `docker history [image]`                 | lists the steps and layers that make up the given image |
 | `docker kill -s [signal] [container]`    | sends the given signal (e.g. HUP) to the container |
-
+| `docker system df`                       | displays all the storage information in control of Docker (images, containers) |
+| `docker system prune`                    | purges all storage that is not currently used by Docker, minus volume related storage |
+| `docker volume prune`                    | purges all volume related storage data that is not currently used by Docker |
 
 ### Seeing What's Happening Inside Our Container Using `docker logs`
 
