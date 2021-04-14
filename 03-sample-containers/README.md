@@ -50,3 +50,5 @@ A container running a Node.js based web application that reports a JSON document
 ## [16 &mdash; Node.js unhealthy webapp container](./e16-nodejs-unhealthy-webapp/)
 A container running a Node.js based web application that is programmed to return an HTTP status code 500 after the fifth request to simulate a failure.
 
+## [01 &mdash; MySQL 5.6 Container with Volume Mapping](./e17-mysql-80-container/)
+MySql 8.0 container in which the server configuration file and data directories are mapped to host directories.
