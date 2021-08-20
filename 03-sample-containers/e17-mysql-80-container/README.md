@@ -1,4 +1,4 @@
-# 01 &mdash; MySQL 8.0 container with volume mapping
+# e17 &mdash; MySQL 8.0 container with volume mapping
 > a MySQL 8.0 server container in which the configuration file and data directories are mapped to host directories
 
 ## Description
