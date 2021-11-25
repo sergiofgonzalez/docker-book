@@ -15,7 +15,7 @@ COPY nodejs-ui-app/app/src/ .
 COPY nodejs-ui-app/.env .
 
 # expose PORT
-expose 5000
+EXPOSE 5000
 
 # start the program
 CMD ["node", "--require", "dotenv/config", "server.js"]
