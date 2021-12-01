@@ -5,7 +5,7 @@ interface OpenLibraryAuthor {
 
 
 async function retrieveData(): Promise<Response> {
-  const url = 'https://openlibrary.org/authors/OL9388A.json';
+  const url = 'https://openlibrary.org/authors/OL66452A.json'; // Shakespeare
   try {
     const response = await fetch(url);
     return response;

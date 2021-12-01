@@ -1,0 +1,31 @@
+## Manifest for a deployment controlling a pod
+
+# Version of the Kubernetes API and type of resource
+apiVersion: apps/v1
+kind: Deployment
+
+# Metadata for the resource with name (mandatory) and labels (optional)
+metadata:
+  name: test-ts-deployment
+
+# Specification of the resource. The structure depends on the resource
+# being created.
+# For a deployment, it must include:
+# + the label selector: This example uses the `app` key, but it can be any other combination of key-value pairs.
+# + the template: which tells Kubernetes how to create the pods (in this case with the label app: test-ts), and the container to use
+spec:
+  selector:
+    matchLabels:
+      app: test-ts
+
+  template:
+    metadata:
+      labels:
+        app: test-ts
+
+    spec:
+      containers:
+        - name: ts-web-app
+          image: sergiofgonzalez/ts-nodejs-container:latest # pulled from DockerHub
+          # image: <account-id>.dkr.ecr.<region-id>.amazonaws.com/sergiofgonzalez/ts-nodejs-container:cervantes # pulled from ECR
+

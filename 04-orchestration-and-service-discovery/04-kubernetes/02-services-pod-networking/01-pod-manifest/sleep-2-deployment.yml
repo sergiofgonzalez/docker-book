@@ -1,0 +1,22 @@
+## Manifest for sleep-1 deployment
+
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: sleep-2
+
+spec:
+  selector:
+    matchLabels:
+      app: sleep-2
+
+  template:
+    metadata:
+      labels:
+        app: sleep-2
+
+    spec:
+      containers:
+        - name: sleeping-container
+          image: sergiofgonzalez/sleeping-container:latest

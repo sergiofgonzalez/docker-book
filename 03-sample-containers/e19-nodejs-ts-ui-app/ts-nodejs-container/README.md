@@ -51,7 +51,6 @@ First make sure that you have created and tagged the Docker image in accordance 
 
 ```
 $ docker images
-$ docker images
 REPOSITORY                                      TAG                 IMAGE ID       CREATED        SIZE
 sergiofgonzalez/ts-nodejs-container             latest              b75cef5960d9   3 days ago     304MB
 ...

@@ -1,0 +1,18 @@
+## Manifest for a standalone pod, running a single public container
+
+# Version of the Kubernetes API and type of resource
+apiVersion: v1
+kind: Pod
+
+# Metadata for the resource with name (mandatory) and labels (optional)
+metadata:
+  name: test-ts-pod
+
+# Specification of the resource. The structure depends on the resource
+# being created.
+# For a standalone pod, you have to use the container name and image
+spec:
+  containers:
+    - name: ts-web-app
+      image: sergiofgonzalez/ts-nodejs-container:latest # pulled from DockerHub
+      # image: <account-id>.dkr.ecr.<region-id>.amazonaws.com/sergiofgonzalez/ts-nodejs-container:cervantes # pulled from ECR
