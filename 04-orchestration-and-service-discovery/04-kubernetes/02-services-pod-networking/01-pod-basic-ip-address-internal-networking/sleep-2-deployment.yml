@@ -1,4 +1,4 @@
-## Manifest for sleep-1 deployment
+## Manifest for sleep-2 deployment
 
 apiVersion: apps/v1
 kind: Deployment
