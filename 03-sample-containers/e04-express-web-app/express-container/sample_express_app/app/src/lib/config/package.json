@@ -16,7 +16,7 @@
     "eslint": "3.13.0"
   },
   "dependencies": {
-    "js-yaml": "3.7.0",
+    "js-yaml": "3.14.0",
     "nconf": "0.8.4"
   },
   "config": {
