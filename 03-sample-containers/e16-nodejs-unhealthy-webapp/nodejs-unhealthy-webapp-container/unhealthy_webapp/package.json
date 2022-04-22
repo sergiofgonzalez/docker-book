@@ -23,7 +23,7 @@
   "config": {},
   "dependencies": {
     "js-yaml": "3.10.0",
-    "nconf": "0.10.0"
+    "nconf": "0.11.4"
   },
   "scripts": {
     "setup": "rm -rf node_modules && npm install",
