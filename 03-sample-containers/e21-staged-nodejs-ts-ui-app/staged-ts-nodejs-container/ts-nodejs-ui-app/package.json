@@ -50,6 +50,6 @@
     "test-coverage": "jest --verbose --coverage && \"${npm_package_config_chrome_path}\" file://${npm_package_config_wsl_path_prefix}/${PWD}/coverage/index.html"
   },
   "dependencies": {
-    "express": "4.17.1"
+    "express": "4.18.2"
   }
 }
